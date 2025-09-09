@@ -32,9 +32,24 @@ document.getElementById('precoComDesconto');
         e.preventDefault();
         erro.textContent = '';
 
-        try{
+        try {
           //Ler entradas (aceita vírgula em número)
-        
+          const preco = toNumber(document.getElementById('preco').value);
+          const desconto = 
+toNumber(document.getElementById('desconto').value);
+          const taxa = toNumber(document.getElementById('taxa').value);
+          const parcelasRaw = document.getElementById('parcelas').value;
+          const parcelas = parseInt(String(parcelasRaw).replace(',', ''),
+10);
+
+         //Validações
+         if (isNaN(preco) || preco <= 0) throw new Error('Informe um preco'
+válido (> 0).');
+         if (isNaN(desconto) || desconto < 0) throw new Error('desconto deve
+ser ≥ 0.');
+         if (isNaN(taxa) || taxa < 0) throw new Error('Taxa deve ser ≥ 0.');
+         if (isNaN(parcelas) || parcelas < 1) throw new Error('Número de
+parcelas deve ser ≥ 1.');
         }
      }
 
