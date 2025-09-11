@@ -43,15 +43,9 @@ toNumber(document.getElementById('desconto').value);
 10);
 
          //Validações
-         if (isNaN(preco) || preco <= 0) throw new Error('Informe um preco'
-válido (> 0).');
-         if (isNaN(desconto) || desconto < 0) throw new Error('desconto deve
-ser ≥ 0.');
+         if (isNaN(preco) || preco <= 0) throw new Error('Informe um preco válido (> 0).');
+         if (isNaN(desconto) || desconto < 0) throw new Error('desconto deveser ≥ 0. ');
          if (isNaN(taxa) || taxa < 0) throw new Error('Taxa deve ser ≥ 0.');
-         if (isNaN(parcelas) || parcelas < 1) throw new Error('Número de
-parcelas deve ser ≥ 1.');
-        }
-     }
-
-
-
+         if (isNaN(parcelas) || parcelas < 1) throw new Error('Número deparcelas deve ser ≥ 1.');
+        
+         
